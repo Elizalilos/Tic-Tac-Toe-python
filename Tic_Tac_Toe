@@ -1,0 +1,262 @@
+import random
+
+lists=[["a","b","c"] , ["d","e","f"] , ["g","h","i"]]
+
+
+
+#Letting the player choose the position
+
+print("TIC TAC TOE")
+print("YOU ARE REPRESENTED BY X")
+
+# I needed while loop bc i need to reach all the parts of the board
+# Initiation
+
+Game_state="On"
+while (Game_state=="On"):
+    X = (input("The position of ur X:")).strip()
+    # The player is inputing "X" in any postion
+
+    if X.title() == "Top Left":
+        if lists[0][0]!="O":
+            lists[0][0]="X"
+        else:
+            print("This position is already taken.")
+            continue
+
+    elif X.title() == "Top Center":
+        if lists[0][1] != "O":
+            lists[0][1]="X"
+        else:
+            print("This position is already taken.")
+            continue
+
+    elif X.title() == "Top Right":
+        if lists[0][2] != "O":
+            lists[0][2] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+    elif X.title() == "Center Left":
+        if lists[1][0] != "O":
+            lists[1][0] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+    elif X.title() == "Center Of Board":
+        if  lists[1][1]=="e":
+            lists[1][1] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+
+    elif X.title() == "Center Right":
+        if lists[1][2] != "O":
+            lists[1][2] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+
+    elif X.title() == "Bottom Left":
+        if lists[2][0] != "O":
+            lists[2][0] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+            """the player is getting another chance before the computer does\
+            is it fair for the computer though? Yes bc i also used while loop with the computer.\
+            while loop with in a while loop:)"""
+
+
+    elif X.title() == "Bottom Center":
+        if lists[2][1] != "O":
+            lists[2][1] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+
+    elif X.title() == "Bottom Right":
+        if lists[2][2] != "O":
+            lists[2][2] = "X"
+        else:
+            print("This position is already taken.")
+            continue
+
+        lists[2][2]="X"
+
+    Comp_turn="On"
+    while (Comp_turn):
+        c1 = random.randint(0, 2)
+        c2 = random.randint(0, 2)
+        if lists[c1][c2] != "X":
+            lists[c1][c2] ="0"
+            Comp_turn=""
+
+        else:
+            continue
+
+
+    for i in range(0,3):
+        print(lists[i])
+
+    A = (lists[0][0] == lists[1][1] == lists[2][2])
+    while A:
+        if lists[0][0] == "X":
+            print("You won")
+
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+    B = (lists[0][1] == lists[1][1] == lists[2][1])
+    while B:
+        if lists[0][1] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+
+    C = (lists[0][0] == lists[1][0] == lists[2][0])
+    while C:
+        if lists[0][0] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    D = (lists[0][0] == lists[0][1] == lists[0][2])
+    while D:
+        if lists[0][0] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    E = (lists[1][0] == lists[1][1] == lists[1][2])
+    while E:
+        if lists[1][0] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    F = (lists[0][2] == lists[1][1] == lists[2][0])
+    while F:
+        if lists[0][2] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    G = (lists[0][2] == lists[1][2] == lists[2][2])
+    while G:
+        if lists[0][2] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    H = (lists[2][0] == lists[2][1] == lists[2][2])
+    while H:
+        if lists[2][0] == "X":
+            print("You won")
+        else:
+            print("Computer won Ha in ur face ;)")
+
+        print()
+        M = input("Do you want to play again?")
+        if (M == "Yes"):
+            Game_state = "On"
+            lists.clear()
+        else:
+            print("Thank you for playing.")
+            break
+
+    #Even Case
+    a_check= "a" in lists[0]
+    b_check= "b" in lists[0]
+    c_check= "c" in lists[0]
+    d_check = "d" in lists[1]
+    e_check = "e" in lists[1]
+    f_check = "f" in lists[1]
+    g_check = "g" in lists[2]
+    h_check = "h" in lists[2]
+    i_check = "i" in lists[2]
+
+    Even_case = not (A or B or C or D or E or F or G or H)
+    if (a_check==b_check==c_check==d_check==e_check==f_check==g_check==h_check==i_check==False) and (Even_case):
+        print("YOU ARE EVEN!!!")
+
+# to be checked yet
+
+
+
+
+
+
+
+
+
+
+
